@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
   <head>
     <title>信用评分卡模型开发与应用</title>
     <meta charset="utf-8" />
@@ -81,68 +81,43 @@ class: inverse, center, middle
 &lt;tbody&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; age.in.years &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; [-Inf,25) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 124 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [-Inf,26) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 119 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; age.in.years &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; [25,27) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 134 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [26,35) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 146 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; age.in.years &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; [27,28) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [35,37) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 201 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; age.in.years &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [37, Inf) &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 162 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; age.in.years &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; [28,30) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 132 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; age.in.years &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; [30,44) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 159 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; age.in.years &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; [44,47) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 166 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; age.in.years &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; [47,55) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 167 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; age.in.years &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; [55, Inf) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 155 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; housing &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; rent &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 123 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 122 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; housing &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; own &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 162 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 163 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; housing &lt;/td&gt;
    &lt;td style="text-align:left;"&gt; for free &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 118 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 117 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; present.employment.since &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; unemployed &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 130 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; present.employment.since &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; ... &amp;lt; 1 year &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 120 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; unemployed%,%... &amp;lt; 1 year &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 125 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; present.employment.since &lt;/td&gt;
@@ -151,13 +126,8 @@ class: inverse, center, middle
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;"&gt; present.employment.since &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; 4 &amp;lt;= ... &amp;lt; 7 years &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 174 &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; present.employment.since &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; ... &amp;gt;= 7 years &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 164 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 4 &amp;lt;= ... &amp;lt; 7 years%,%... &amp;gt;= 7 years &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 167 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -198,10 +168,10 @@ class: inverse, center, middle
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:right;"&gt; 159 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 123 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 201 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 122 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 148 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 430 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 471 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -400,7 +370,7 @@ packageVersion('scorecard')
 ```
 
 ```
-# [1] '0.3.1.999'
+# [1] '0.2.8.999'
 ```
 
 ```r
@@ -482,12 +452,18 @@ bins$age.in.years
 ```
 
 ```
-#        variable       bin count count_distr neg pos posprob     woe   bin_iv total_iv breaks is_special_values
-# 1: age.in.years [-Inf,26)   190       0.190 110  80  0.4211  0.5288 0.057921   0.1305     26             FALSE
-# 2: age.in.years   [26,28)   101       0.101  74  27  0.2673 -0.1609 0.002529   0.1305     28             FALSE
-# 3: age.in.years   [28,35)   257       0.257 172  85  0.3307  0.1425 0.005359   0.1305     35             FALSE
-# 4: age.in.years   [35,37)    79       0.079  67  12  0.1519 -0.8725 0.048610   0.1305     37             FALSE
-# 5: age.in.years [37, Inf)   373       0.373 277  96  0.2574 -0.2124 0.016080   0.1305    Inf             FALSE
+#        variable       bin count count_distr good bad badprob     woe
+# 1: age.in.years [-Inf,26)   190       0.190  110  80  0.4211  0.5288
+# 2: age.in.years   [26,28)   101       0.101   74  27  0.2673 -0.1609
+# 3: age.in.years   [28,35)   257       0.257  172  85  0.3307  0.1425
+# 4: age.in.years   [35,37)    79       0.079   67  12  0.1519 -0.8725
+# 5: age.in.years [37, Inf)   373       0.373  277  96  0.2574 -0.2124
+#      bin_iv total_iv breaks is_special_values
+# 1: 0.057921   0.1305     26             FALSE
+# 2: 0.002529   0.1305     28             FALSE
+# 3: 0.005359   0.1305     35             FALSE
+# 4: 0.048610   0.1305     37             FALSE
+# 5: 0.016080   0.1305    Inf             FALSE
 ```
 
 ---
@@ -746,20 +722,62 @@ summary(m2)$coefficients
 ```
 
 ```
-#                                                         Estimate Std. Error z value  Pr(&gt;|z|)
-# (Intercept)                                              -0.8581     0.1033  -8.306 9.904e-17
-# status.of.existing.checking.account_woe                   0.8950     0.1365   6.558 5.455e-11
-# duration.in.month_woe                                     0.6952     0.1999   3.477 5.067e-04
-# credit.history_woe                                        0.6206     0.1943   3.195 1.400e-03
-# purpose_woe                                               0.7737     0.2596   2.980 2.883e-03
-# credit.amount_woe                                         0.8370     0.2549   3.283 1.027e-03
-# savings.account.and.bonds_woe                             1.1510     0.2481   4.639 3.501e-06
-# present.employment.since_woe                              0.6553     0.3527   1.858 6.317e-02
-# installment.rate.in.percentage.of.disposable.income_woe   1.8456     0.6502   2.839 4.531e-03
-# other.debtors.or.guarantors_woe                           1.7955     0.7693   2.334 1.959e-02
-# age.in.years_woe                                          0.6132     0.2990   2.051 4.027e-02
-# other.installment.plans_woe                               0.9286     0.4110   2.259 2.388e-02
-# housing_woe                                               0.5538     0.3439   1.610 1.073e-01
+#                                                         Estimate
+# (Intercept)                                              -0.8581
+# status.of.existing.checking.account_woe                   0.8950
+# duration.in.month_woe                                     0.6952
+# credit.history_woe                                        0.6206
+# purpose_woe                                               0.7737
+# credit.amount_woe                                         0.8370
+# savings.account.and.bonds_woe                             1.1510
+# present.employment.since_woe                              0.6553
+# installment.rate.in.percentage.of.disposable.income_woe   1.8456
+# other.debtors.or.guarantors_woe                           1.7955
+# age.in.years_woe                                          0.6132
+# other.installment.plans_woe                               0.9286
+# housing_woe                                               0.5538
+#                                                         Std. Error
+# (Intercept)                                                 0.1033
+# status.of.existing.checking.account_woe                     0.1365
+# duration.in.month_woe                                       0.1999
+# credit.history_woe                                          0.1943
+# purpose_woe                                                 0.2596
+# credit.amount_woe                                           0.2549
+# savings.account.and.bonds_woe                               0.2481
+# present.employment.since_woe                                0.3527
+# installment.rate.in.percentage.of.disposable.income_woe     0.6502
+# other.debtors.or.guarantors_woe                             0.7693
+# age.in.years_woe                                            0.2990
+# other.installment.plans_woe                                 0.4110
+# housing_woe                                                 0.3439
+#                                                         z value
+# (Intercept)                                              -8.306
+# status.of.existing.checking.account_woe                   6.558
+# duration.in.month_woe                                     3.477
+# credit.history_woe                                        3.195
+# purpose_woe                                               2.980
+# credit.amount_woe                                         3.283
+# savings.account.and.bonds_woe                             4.639
+# present.employment.since_woe                              1.858
+# installment.rate.in.percentage.of.disposable.income_woe   2.839
+# other.debtors.or.guarantors_woe                           2.334
+# age.in.years_woe                                          2.051
+# other.installment.plans_woe                               2.259
+# housing_woe                                               1.610
+#                                                          Pr(&gt;|z|)
+# (Intercept)                                             9.904e-17
+# status.of.existing.checking.account_woe                 5.455e-11
+# duration.in.month_woe                                   5.067e-04
+# credit.history_woe                                      1.400e-03
+# purpose_woe                                             2.883e-03
+# credit.amount_woe                                       1.027e-03
+# savings.account.and.bonds_woe                           3.501e-06
+# present.employment.since_woe                            6.317e-02
+# installment.rate.in.percentage.of.disposable.income_woe 4.531e-03
+# other.debtors.or.guarantors_woe                         1.959e-02
+# age.in.years_woe                                        4.027e-02
+# other.installment.plans_woe                             2.388e-02
+# housing_woe                                             1.073e-01
 ```
 
 ---
@@ -807,6 +825,10 @@ pred_list = lapply(dt_woe_list, function(x) predict(m2, x, type='response'))
 # performance 
 label_list = lapply(dt_list, function(x) x$creditability)
 perf = perf_eva(pred = pred_list, label = label_list)
+```
+
+```
+## [INFO] The threshold of confusion matrix is 0.3851.
 ```
 
 ![](index_files/figure-html/perf_pic-1.png)&lt;!-- --&gt;
@@ -1034,94 +1056,94 @@ str(score_list2$train)
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; [-Inf,238) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0073 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [-Inf,235) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0059 &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.0126 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0053 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.5444 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0029 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0467 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0068 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.7676 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0052 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0216 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; [238,296) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0366 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0379 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0013 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0336 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0000 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0467 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [235,291) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0381 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0347 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0034 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0926 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0216 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; [296,354) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1113 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1009 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0103 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0974 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0010 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0467 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [291,346) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0922 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0820 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0102 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1174 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0012 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0216 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; [354,412) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1669 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1514 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0155 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0974 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0015 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0467 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [346,402) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1493 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1609 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0115 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0744 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0009 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0216 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; [412,470) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1757 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1703 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0053 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0309 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0002 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0467 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [402,457) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1625 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1388 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0237 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1577 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0037 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0216 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; [470,527) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1684 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.2019 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0335 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.1815 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0061 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0467 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [457,512) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1728 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1830 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0102 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0574 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0006 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0216 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; [527,585) &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [512,568) &lt;/td&gt;
    &lt;td style="text-align:right;"&gt; 0.1288 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1483 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0194 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.1404 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0027 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0467 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1514 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0226 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.1615 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0036 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0216 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; [585,643) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.1318 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0852 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0466 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.4364 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0203 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0467 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [568,623) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1362 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1167 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0194 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1541 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0030 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0216 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; [643,701) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0542 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0789 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.0247 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; -0.3756 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0093 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0467 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [623,679) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0776 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0726 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0050 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0672 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0216 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; [701, Inf) &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0190 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0126 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0064 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.4111 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0026 &lt;/td&gt;
-   &lt;td style="text-align:right;"&gt; 0.0467 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; [679, Inf) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0366 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0473 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.0107 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -0.2568 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0028 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0216 &lt;/td&gt;
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
@@ -1186,7 +1208,7 @@ psi$psi[,.(variable, psi)]
 ## 10:                                        age.in.years_points 5.902e-03
 ## 11:                             other.installment.plans_points 2.034e-07
 ## 12:                                             housing_points 8.340e-03
-## 13:                                                      score 4.666e-02
+## 13:                                                      score 2.162e-02
 ```
 
 ---
@@ -1334,32 +1356,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
-(function() {
-  "use strict"
-  // Replace <script> tags in slides area to make them executable
-  var scripts = document.querySelectorAll(
-    '.remark-slides-area .remark-slide-container script'
-  );
-  if (!scripts.length) return;
-  for (var i = 0; i < scripts.length; i++) {
-    var s = document.createElement('script');
-    var code = document.createTextNode(scripts[i].textContent);
-    s.appendChild(code);
-    var scriptAttrs = scripts[i].attributes;
-    for (var j = 0; j < scriptAttrs.length; j++) {
-      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
-    }
-    scripts[i].parentElement.replaceChild(s, scripts[i]);
-  }
-})();
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -1377,6 +1373,17 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
 
 <script>
 slideshow._releaseMath = function(el) {
