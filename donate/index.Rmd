@@ -1,28 +1,22 @@
 :::::: {.columns style="display: flex;"}
 
-::: {.column width="32%"}
+::: {.column width="46%"}
 ## alipay 
 ![](../images/donation/p-alipay.png)
 :::
 
-::: {.column width="2%"}
+::: {.column width="8%"}
 :::
 
-::: {.column width="32%"}
+::: {.column width="46%"}
 ## wechatpay
 ![](../images/donation/p-wechatpay.png)
 :::
 
-::: {.column width="2%"}
-:::
-
-::: {.column width="32%"}
-## paypal
-https://www.paypal.me/shichenxie
-:::
-
 ::::::
 
+## paypal
+https://www.paypal.me/shichenxie
 
 
 
