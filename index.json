@@ -20,7 +20,7 @@
 {
 	"uri": "http://shichen.name/post/",
 	"title": "Post",
-	"tags": ["index"],
+	"tags": [],
 	"categories": [],
 	"series": [],
 	"description": "Post page",
@@ -64,7 +64,7 @@
 },
 {
 	"uri": "http://shichen.name/post/fintech_credit/",
-	"title": "[转]互联网金融的大数据风控",
+	"title": "[转] 互联网金融的大数据风控",
 	"tags": ["credit"],
 	"categories": [],
 	"series": [],
@@ -128,15 +128,6 @@
 {
 	"uri": "http://shichen.name/categories/",
 	"title": "Categories",
-	"tags": [],
-	"categories": [],
-	"series": [],
-	"description": "",
-	"content": ""
-},
-{
-	"uri": "http://shichen.name/tags/index/",
-	"title": "index",
 	"tags": [],
 	"categories": [],
 	"series": [],

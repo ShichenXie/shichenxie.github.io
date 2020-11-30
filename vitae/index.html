@@ -7,16 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <meta name="author" content="谢士晨" />
-    <meta name="date" content="2020-02-24" />
+    <meta name="date" content="2020-11-30" />
     <title>谢士晨</title>
 
     
         <link href="index_files/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
     <link href="index_files/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
-    <link href="index_files/paged-0.8/css/resume.css" rel="stylesheet" />
-    <script src="index_files/paged-0.8/js/config.js"></script>
-    <script src="index_files/paged-0.8/js/paged.js"></script>
-    <script src="index_files/paged-0.8/js/hooks.js"></script>
+    <link href="index_files/paged-0.12/css/resume.css" rel="stylesheet" />
+    <script src="index_files/paged-0.12/js/config.js"></script>
+    <script src="index_files/paged-0.12/js/paged.js"></script>
+    <script src="index_files/paged-0.12/js/hooks.js"></script>
+    <script src="index_files/accessible-code-block-0.0.1/empty-anchor.js"></script>
+    <link href="index_files/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+    <script src="index_files/anchor-sections-1.0/anchor-sections.js"></script>
     
     
   </head>
@@ -24,7 +27,7 @@
 
 <div id="aside" class="section level1">
 <h1>Aside</h1>
-<p><img src="index_files/xie.jpg" alt="谢士晨" style="width:80.0%" /></p>
+<p><img src="index_files/xie.jpg" style="width:80.0%" alt="谢士晨" /></p>
 <p><i class='fas fa-download'></i> <a href="http://shichen.name/vitae/index.pdf">下载简历 pdf 版本</a></p>
 <div id="contact" class="section level2">
 <h2>联系信息</h2>
@@ -48,7 +51,7 @@
 <h2>Disclaimer</h2>
 <p><a href="http://shichen.name/vitae/">简历在线版本 <strong>shichen.name/vitae</strong></a></p>
 <!-- This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown). -->
-<!-- Last updated on 2020-02-24. -->
+<!-- Last updated on 2020-11-30. -->
 </div>
 </div>
 <div id="main" class="section level1">
@@ -280,8 +283,11 @@
     if (i === 0 && el.id === 'title') continue;
     el.className += ' main-block';
     if (el.dataset['concise']) el.className += ' concise';
-    s = el.dataset['icon'] || 'bookmark';
-    el.firstElementChild.insertBefore(create_el('i', 'fa fa-' + s), el.firstElementChild.firstChild);
+    // if there is no icon, add an icon:
+    if (el.firstElementChild.firstChild && el.firstElementChild.firstChild.nodeName !== 'I') {
+      s = el.dataset['icon'] || 'bookmark';
+      el.firstElementChild.insertBefore(create_el('i', 'fa fa-' + s), el.firstElementChild.firstChild);
+    }
   }
 
   // tweak class names of blocks in sections
