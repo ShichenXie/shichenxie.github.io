@@ -1,0 +1,293 @@
+---
+title: "谢士晨"
+author: 谢士晨
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: false
+# uncomment this line to produce HTML and PDF in RStudio:
+# knit: pagedown::chrome_print
+---
+
+Aside
+================================================================================
+
+![谢士晨](index_files/xie.jpg){width=80%} 
+
+<i class='fas fa-download'></i> [下载简历 pdf 版本](http://shichen.name/vitae/index.pdf)
+
+联系信息 {#contact}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-envelope"></i> xie@shichen.name
+- <i class="fa fa-home"></i> [shichen.name](http://shichen.name)
+- <i class="fa fa-github"></i> [github.com/shichenxie](https://github.com/shichenxie)
+- <i class="fa fa-location-arrow"></i> 北京朝阳
+- 更多联系方式请邮件沟通
+
+技能特点 {#skills}
+--------------------------------------------------------------------------------
+
+- 熟练掌握评分卡模型，为多家金融机构开发过评分卡与风控策略
+
+- 熟悉各类机器学习模型，从事过图像处理相关工作
+
+- 熟练掌握R、python、sql、stata、eviews、LaTeX等专业工具，开发过多个开源工具包
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+[简历在线版本 **shichen.name/vitae**](http://shichen.name/vitae/)
+
+<!-- This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown). -->
+
+<!-- Last updated on `r Sys.Date()`. -->
+
+
+
+Main
+================================================================================
+
+谢士晨 {#title}
+--------------------------------------------------------------------------------
+
+<!-- ### Currently searching for a PhD student position -->
+
+<!-- Please note that this is a *real* resume, and I'm really looking for a PhD -->
+<!-- student position at the moment. I made this resume because Yihui asked me -->
+<!-- if I'd like to test the **pagedown** package with my resume. If you are -->
+<!-- interested in my background and skills, please feel free to contact me. -->
+
+
+教育背景 {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+### 名古屋大学
+
+博士 国际开发（环境经济方向）
+
+名古屋, 日本
+
+2010 - 2014
+
+<!-- Thesis: Dyadic wavelet and its application in edge detection -->
+
+### 华东理工大学
+
+硕士 环境工程
+
+上海, 中国
+
+2007 - 2010
+
+<!-- Thesis: A multi-omics study for intra-individual divergence of the distributions between mRNA isoforms in mammals -->
+
+### 华中农业大学
+
+本科 环境科学
+
+武汉, 中国
+
+2002 - 2006
+
+
+工作经历 {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+### 数据分析经理
+
+中银富登
+
+北京, 中国
+
+2019 - 今
+
+::: concise
+- 主要从事线上贷款的产品设计
+- 风险模型开发与风控策略制定
+- 第三方风控数据规划等工作。
+:::
+
+### 高级数据分析师
+
+小米支付
+
+北京, 中国
+
+2018 - 2019
+
+::: concise
+- 主要从事风控相关的数据建模与分析工作。
+- 使用机器学习模型实现了小米金服的用户欺诈风险模型；
+- 使用 faster-rcnn, ctpn 与 densenet 完成了身份证 OCR 模型 demo 系统。
+:::
+
+### 高级数据分析师
+
+百融金服
+
+北京, 中国
+
+2017 - 2018
+
+::: concise
+- 主要从事信用风险模型开发与整体风控方案制定。
+- 为多家银行与消费金融机构提供了评分卡模型，
+- 以及咨询与培训等相关服务.
+:::
+
+### 高级数据分析师
+
+久其龙信
+
+北京, 中国
+
+2015 - 2017
+
+::: concise
+- 主要从事财政经济等相关领域的数据分析。
+- 完成了多个省市财政与宏观经济的研究分析.
+:::
+
+<!-- Teaching Experience {data-icon=chalkboard-teacher} -->
+<!-- -------------------------------------------------------------------------------- -->
+
+<!-- ### Introduction to R Language for Beginners. -->
+
+<!-- Instructor of R and Data Mining Training Courses at SupStat Inc. -->
+
+<!-- Beijing, China -->
+
+<!-- 2014 -->
+
+<!-- ### Computational Biology and Bioinformatics. -->
+
+<!-- Teaching assistant of GBS CB2-201 courses at UAB -->
+
+<!-- AL, USA -->
+
+<!-- 2016 - 2017 -->
+
+开源项目 {data-icon=laptop}
+--------------------------------------------------------------------------------
+
+### R 包 scorecard 
+
+[![](https://img.shields.io/badge/GitHub-%20-red)](https://github.com/ShichenXie/scorecard) [![](https://img.shields.io/badge/HomePage-%20-green)](http://shichen.name/scorecard)
+<!-- [![](http://cranlogs.r-pkg.org/badges/grand-total/scorecard)](https://cran.r-project.org/package=scorecard) -->
+[![](http://cranlogs.r-pkg.org/badges/scorecard)](https://cran.r-project.org/package=scorecard)
+
+<!-- Beijing, China --> N/A
+
+2017
+
+- 提高了评分卡模型的开发效率，提供了特征预处理、变量初筛、最优分箱、模型评估、评分刻度转换与模型报告输出等多个功能。
+
+### python 包 scorecardpy 
+
+[![](https://img.shields.io/badge/GitHub-%20-red)](https://github.com/ShichenXie/scorecardpy) [![](https://img.shields.io/badge/HomePage-%20-green)](http://shichen.name/scorecard)
+<!-- [![](http://pepy.tech/badge/scorecardpy)](http://pepy.tech/project/scorecardpy) -->
+[![Downloads](https://pepy.tech/badge/scorecardpy/month)](https://pepy.tech/project/scorecardpy/month)
+
+<!-- Beijing, China -->N/A
+
+2018
+
+- 该包是 python 版本的 R 包 scorecard。提高了用 python 开发评分卡模型的效率，提供了变量初筛、最优分箱、模型评估与评分刻度等功能。
+
+### R 包 pedquant 
+
+[![](https://img.shields.io/badge/GitHub-%20-red)](https://github.com/ShichenXie/pedquant) [![](https://img.shields.io/badge/HomePage-%20-green)](http://pedquant.com/) 
+<!-- [![](http://cranlogs.r-pkg.org/badges/grand-total/pedquant)](https://cran.r-project.org/package=pedquant) -->
+[![](http://cranlogs.r-pkg.org/badges/pedquant)](https://cran.r-project.org/package=pedquant)
+
+<!-- Beijing, China -->N/A
+
+2019
+
+- pedquant 能够获取国家统计局 NBS、美联储财经数据 FRED、全球股票、国内期货等财经数据，并提供了可视化与量化分析等功能。
+
+
+著作论文 {data-icon=file}
+--------------------------------------------------------------------------------
+
+###  An Empirical Study on Energy Use, Carbon Emissions and Economic Growth in China. [[url](http://hdl.handle.net/2237/21226)]
+
+Doctoral dissertation
+
+N/A
+
+2014
+
+**Xie, Shichen**.
+
+### The driving forces of China’s energy use from 1992 to 2010: An empirical study of input–output and structural decomposition analysis. [[url](http://dx.doi.org/10.1016/j.enpol.2014.05.035)]
+
+Energy Policy, 73, 401–415. (SCI, IF=2.696)
+
+N/A
+
+2014 
+
+**Xie, Shichen**.
+
+### Energy demand and carbon emissions under different development scenarios for Shanghai, China. [[url](http://dx.doi.org/10.1016/j.enpol.2009.08.048)]
+
+Energy Policy, 38 (9), 4797–4807. (SCI, IF=2.696)
+
+N/A
+
+2010 
+
+Li, L., Chen, C., **Xie, Shichen**, et al.
+
+### 上海市能源消费 CO2 排放清单与碳流通图. [[url](http://xueshu.baidu.com/usercenter/data/paperhelp?cmd=paper_forward&longsign=be81b707246cfe6c7d5b1f943d8d812b&title=上海市能源消费CO_2排放清单与碳流通图)]
+
+中国环境科学, 29 (11), 1215–1220. (中国自然科学重点核心, EI)
+
+N/A
+
+2009
+
+**谢士晨**, 陈长虹, 李莉, 等.
+
+### 2006 年中国能流图. [[url](http://xueshu.baidu.com/usercenter/data/paperhelp?cmd=paper_forward&longsign=883fce3829ea8205e21f523ced2e272b&title=2006年中国能流图)]
+
+中国能源, 31 (3), 21–23. (中国科技核心)
+
+N/A
+
+2009
+
+**谢士晨**, 陈长虹, 李莉, 等.
+
+荣誉奖励 {data-icon=star}
+--------------------------------------------------------------------------------
+
+### 华东理工大学期间
+
+硕士期间
+
+上海, 中国
+
+2007 - 2010
+
+- 2010 国家留学基金委. 公费留学奖学金. 
+- 2010 华东理工大学. 优秀毕业生. 
+- 2009 华东理工大学. 科研实践奖. 
+- 2009 上海市版权局. 作品登记证书:中国能源流通图 (09-2009-J-002). 
+- 2008 上海市科学技术委员会. 上海市科技进步三等奖 (9312008Y1253). 
+
+
+### 华中农业大学期间
+
+本科期间
+
+武汉, 中国
+
+2002 - 2006
+
+- 2005 华中农业大学. 科技创新个人奖. 
+- 2004 全国大学生数学建模大赛. 湖北省二等奖. 

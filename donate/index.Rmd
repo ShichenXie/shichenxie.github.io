@@ -1,0 +1,24 @@
+
+:::::: {.columns style="display: flex;"}
+
+::: {.column width="46%"}
+## alipay 
+![](../imgs/donation/p-alipay.png)
+:::
+
+::: {.column width="8%"}
+:::
+
+::: {.column width="46%"}
+## wechatpay
+![](../imgs/donation/p-wechatpay.png)
+:::
+
+::::::
+
+## paypal
+https://www.paypal.me/shichenxie
+
+
+
+

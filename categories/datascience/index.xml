@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DataScience on 谢 XIE</title>
+    <link>/categories/datascience/</link>
+    <description>Recent content in DataScience on 谢 XIE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 26 Dec 2019 00:00:00 +0000</lastBuildDate><atom:link href="/categories/datascience/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>data.table 与 pandas</title>
+      <link>/posts/2019-12-26-dt-pd/</link>
+      <pubDate>Thu, 26 Dec 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2019-12-26-dt-pd/</guid>
+      <description>数据分析项目通常可以分解为以下过程，数据加载-数据清洗-(特征处理、可视化、模型训练)-成果汇报1。其中，数据清洗与特征处理或者称为数据预处理过程，一般会占据整个项目的大部分时间。熟练掌握相关工具，提高数据处理的效率，是开展数据分析工作的基础。 在开展数据科学相关工作时，最常用的开源工具包括 R 与 python。对于可在内存级处理的数据，在 R 中通常使用 data.table 包进行数据处理，而在 python 环境中 pandas 包最为常用的。为了方便查阅和对比，本文分别用 data.table 与 pandas 实现了常见的数据处理任务2。
+数据框（data frame）是大家接触最多的数据格式，它的每一列都是长度相等、类型一致的向量。对数据框的操作可以从行与列两个维度，拆解为以下五类基本操作。这一思路来自 dplyr 包3的帮助文档，因此下面五类基本操作的英文均为该包的函数名。这些基本操作均可以与 group_by 相互结合使用。除了这五类基本操作，还包括行列转换、数据框的切割与合并等。绝多数的数据处理任务都可以拆解为以上这几类基本操作，具体案例请参见下面的代码。
+行：选择 filter、排序 arrange 列：选择 select、新建 mutate、计算 summarise 数据探索 数据加载 library(data.table) packageVersion(&amp;#39;data.table&amp;#39;) url = &amp;quot;https://vincentarelbundock.github.io/Rdatasets/csv/datasets/HairEyeColor.csv&amp;quot; dt = fread(url) import pandas as pd pd.__version__ url = &amp;quot;https://vincentarelbundock.github.io/Rdatasets/csv/datasets/HairEyeColor.csv&amp;quot; df = pd.read_csv(url) 查看数据结构 # 数据类型 class(dt) str(dt) # 列名 names(dt) # 打印前后几行 head(dt, n=3) tail(dt, n=3) # 维度 dim(dt) nrow(dt) ncol(dt) # 统计描述 summary(dt) # 数据类型 type(df) df.</description>
+    </item>
+    
+    <item>
+      <title>stringr 与 regex 函数对应关系</title>
+      <link>/posts/2017-07-25-stringr-regex/</link>
+      <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2017-07-25-stringr-regex/</guid>
+      <description>stringr 是 Hadley 大神写的 tidyverse1 系列数据处理包中专门用于处理文本数据的，其函数命名统一易于记忆。而 R 基础包中的文本处理函数 (regex) 的命名规则不是特别统一。下表给出了主要函数之间的映射关系，便于以后查看2。
+stringr包中函数 功能说明 R Base 中对应函数 使用正则表达式的函数 str_extract() 提取首个匹配模式的字符 regmatches() str_extract_all() 提取所有匹配模式的字符 regmatches() str_locate() 返回首个匹配模式的字符的位置 regexpr() str_locate_all() 返回所有匹配模式的字符的位置 gregexpr() str_replace() 替换首个匹配模式 sub() str_replace_all() 替换所有匹配模式 gsub() str_split() 按照模式分割字符串 strsplit() str_split_fixed() 按照模式将字符串分割成指定个数 - str_detect() 检测字符是否存在某些指定模式 grepl() str_count() 返回指定模式出现的次数 - 其他重要函数 str_sub() 提取指定位置的字符 regmatches() str_dup() 丢弃指定位置的字符 - str_length() 返回字符的长度 nchar() str_pad() 填补字符 - str_trim() 丢弃填充，如去掉字符前后的空格 - str_c() 连接字符 paste(),paste0() r 与 python 中三个数据处理系列包： data.table、 tidyverse、 pandas&amp;#160;&amp;#x21a9;&amp;#xfe0e;</description>
+    </item>
+    
+    <item>
+      <title>Markdown相关资料</title>
+      <link>/posts/2017-04-05-markdown/</link>
+      <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2017-04-05-markdown/</guid>
+      <description> John Gruber&amp;rsquo;s Markdown syntax ( 中文翻译) John MacFarlane&amp;rsquo;s Pandoc Markdown ( 中文翻译) Blackfriday Markdown ( github) RMarkdown ( github) MathJax ( 中文版) </description>
+    </item>
+    
+    <item>
+      <title>博客搭建过程</title>
+      <link>/posts/2017-03-21-new-site/</link>
+      <pubDate>Tue, 21 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2017-03-21-new-site/</guid>
+      <description>在“我网故我在”的召唤下，我使用 R 语言的 blogdown 包1 和 GitHubPages 在一小时内搭建了本博客。搭建过程分为三个步骤：编辑网站文件、创建 GitHub Pages 仓库、域名绑定。
+编辑网站文件 首先需要编写网站文件，也就是一堆 HTML、JS、CSS 文件。 益辉的 blogdown 让静态网站文件编写简单到了一条 R 语句。在编辑网站文件之前，最好用 RStudio 新建一个空的项目文件夹，便于文件管理。在 R 中敲入如下代码
+# 安装blogdown包 devtools::install_github(&amp;#39;rstudio/blogdown&amp;#39;) setwd(path) # path为新建的项目文件夹路径 # 或者直接用rstudio打开*.Rproj文件 # 创建网站文件 blogdown::new_site() # 默认主题 theme = &amp;#34;yihui/hugo-lithium&amp;#34; # &amp;gt; sessionInfo() # R语言系统环境 # R version 3.3.2 (2016-10-31) # Platform: x86_64-apple-darwin13.4.0 (64-bit) # Running under: macOS Sierra 10.12.3 创建GitHub Pages仓库 登录自己的 github 主页（例如我的主页 https://github.com/shichenxie，其中shichenxie为我的 github 账号），新建名为shichenxie.github.io的项目仓库 (repository)。
+然后将 blogdown 创建的 public 文件夹上传到 github pages 文件夹中。在 terminal 中敲入如下代码2</description>
+    </item>
+    
+  </channel>
+</rss>

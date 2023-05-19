@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.111.3">
+<title>DataScience | 谢 XIE</title>
+
+
+<meta property="twitter:site" content="@apreshill">
+<meta property="twitter:creator" content="@apreshill">
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="谢士晨 Shichen.Xie">
+
+
+<meta property="og:site_name" content="谢 XIE">
+<meta property="og:title" content="DataScience | 谢 XIE">
+<meta property="og:description" content="谢士晨 Shichen.Xie" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="/categories/datascience/" />
+<meta property="og:locale" content="en">
+
+
+
+
+    
+        <meta property="og:image" content="/img/papillons.jpg" >
+        <meta property="twitter:card" content="summary_large_image">
+        <meta name="twitter:image" content="/img/papillons.jpg" >
+    
+  <meta itemprop="name" content="DataScience">
+<meta itemprop="description" content="谢士晨 Shichen.Xie">
+  
+  
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="imgs/logo.jpeg" type="image/x-icon">
+  <link rel="icon" href="imgs/logo.jpeg" type="image/x-icon">
+  
+    <link rel="alternate" type="application/rss+xml" href="/categories/datascience/index.xml" title="谢 XIE" />
+  
+  
+  <link rel="stylesheet" href="/style.main.min.3b8f190814556942d4024863228a4b8b97d192b40effa20f5fe5d3eed431abd2.css" integrity="sha256-O48ZCBRVaULUAkhjIopLi5fRkrQO/6IPX&#43;XT7tQxq9I=" media="screen">
+  
+  
+  <script src="/panelset.min.ed1ac24b6e16f4e2481e3d1d098ae66f5bc77438aef619e6e266d8ac5b00dc72.js" type="text/javascript"></script>
+  
+  
+  <script src="/main.min.c321db01a2d0b839beaa47e1ac546821b5b823c919d9d9866447e758fedb9bc2.js" type="text/javascript"></script>
+</head>
+<body>
+      <div class="grid-container">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="/" title="Home">
+      <img src="/imgs/logo.jpeg" class="dib db-l h2 w-auto" alt="谢 XIE">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/posts/" title="Posts">Posts</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/projects/" title="Projects">Projects</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/slides/" title="Slides">Slides</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+<main class="page-main pa4" role="main">
+  <section class="blog-intro mw7 center mb5">
+    <h1 class="f2 f1-ns fw4 lh-solid tc center i">DataScience</h1>
+    <p class="f6 f5-ns measure lh-copy tc center"></p>
+  </section>
+  <section class="blog-content mw7 center">
+  
+    
+                               
+     
+     
+<article class="mv4 mv5-l bb">
+
+  
+  
+  <div class="measure-wide center mb4 mb5-l">
+    <header>
+      <h1 class="f3 mt0 mb2 lh-title underline fw4"><a href="/posts/2019-12-26-dt-pd/" class="db">data.table 与 pandas</a></h1>
+      
+    </header>
+      
+      <p class="lh-copy mb4">数据分析项目通常可以分解为以下过程，数据加载-数据清洗-(特征处理、可视化、模型训练)-成果汇报1。其中，数据清洗与特征处理或者称为数据预处理过程，一般会占据整个项目的大部分时间。熟练掌握相关工具，提高数据处理的效率，是开展数据分析工作的基础。 在开展数据科学相关工作时，最常用的开源工具包括 R 与 python。对于可在内存级处理的数据，在 R 中通常使用 data.table 包进行数据处理，而在 python 环境中 pandas 包最为常用的。为了方便查阅和对比，本文分别用 data.table 与 pandas 实现了常见的数据处理任务2。
+数据框（data frame）是大家接触最多的数据格式，它的每一列都是长度相等、类型一致的向量。对数据框的操作可以从行与列两个维度，拆解为以下五类基本操作。这一思路来自 dplyr 包3的帮助文档，因此下面五类基本操作的英文均为该包的函数名。这些基本操作均可以与 group_by 相互结合使用。除了这五类基本操作，还包括行列转换、数据框的切割与合并等。绝多数的数据处理任务都可以拆解为以上这几类基本操作，具体案例请参见下面的代码。
+行：选择 filter、排序 arrange 列：选择 select、新建 mutate、计算 summarise 数据探索 数据加载 library(data.table) packageVersion('data.table') url = &quot;https://vincentarelbundock.github.io/Rdatasets/csv/datasets/HairEyeColor.csv&quot; dt = fread(url) import pandas as pd pd.<strong>version</strong> url = &quot;https://vincentarelbundock.github.io/Rdatasets/csv/datasets/HairEyeColor.csv&quot; df = pd.read_csv(url) 查看数据结构 # 数据类型 class(dt) str(dt) # 列名 names(dt) # 打印前后几行 head(dt, n=3) tail(dt, n=3) # 维度 dim(dt) nrow(dt) ncol(dt) # 统计描述 summary(dt) # 数据类型 type(df) df.</p>
+    <footer>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+  
+    
+                               
+     
+     
+<article class="mv4 mv5-l bb">
+
+  
+  
+  <div class="measure-wide center mb4 mb5-l">
+    <header>
+      <h1 class="f3 mt0 mb2 lh-title underline fw4"><a href="/posts/2017-07-25-stringr-regex/" class="db">stringr 与 regex 函数对应关系</a></h1>
+      
+    </header>
+      
+      <p class="lh-copy mb4">stringr 是 Hadley 大神写的 tidyverse1 系列数据处理包中专门用于处理文本数据的，其函数命名统一易于记忆。而 R 基础包中的文本处理函数 (regex) 的命名规则不是特别统一。下表给出了主要函数之间的映射关系，便于以后查看2。
+stringr包中函数 功能说明 R Base 中对应函数 使用正则表达式的函数 str_extract() 提取首个匹配模式的字符 regmatches() str_extract_all() 提取所有匹配模式的字符 regmatches() str_locate() 返回首个匹配模式的字符的位置 regexpr() str_locate_all() 返回所有匹配模式的字符的位置 gregexpr() str_replace() 替换首个匹配模式 sub() str_replace_all() 替换所有匹配模式 gsub() str_split() 按照模式分割字符串 strsplit() str_split_fixed() 按照模式将字符串分割成指定个数 - str_detect() 检测字符是否存在某些指定模式 grepl() str_count() 返回指定模式出现的次数 - 其他重要函数 str_sub() 提取指定位置的字符 regmatches() str_dup() 丢弃指定位置的字符 - str_length() 返回字符的长度 nchar() str_pad() 填补字符 - str_trim() 丢弃填充，如去掉字符前后的空格 - str_c() 连接字符 paste(),paste0() r 与 python 中三个数据处理系列包： data.table、 tidyverse、 pandas ↩︎</p>
+    <footer>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+  
+    
+                               
+     
+     
+<article class="mv4 mv5-l bb">
+
+  
+  
+  <div class="measure-wide center mb4 mb5-l">
+    <header>
+      <h1 class="f3 mt0 mb2 lh-title underline fw4"><a href="/posts/2017-04-05-markdown/" class="db">Markdown相关资料</a></h1>
+      
+    </header>
+      
+      <p class="lh-copy mb4">John Gruber’s Markdown syntax ( 中文翻译) John MacFarlane’s Pandoc Markdown ( 中文翻译) Blackfriday Markdown ( github) RMarkdown ( github) MathJax ( 中文版)</p>
+    <footer>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+  
+    
+                               
+     
+     
+<article class="mv4 mv5-l bb">
+
+  
+  
+  <div class="measure-wide center mb4 mb5-l">
+    <header>
+      <h1 class="f3 mt0 mb2 lh-title underline fw4"><a href="/posts/2017-03-21-new-site/" class="db">博客搭建过程</a></h1>
+      
+    </header>
+      
+      <p class="lh-copy mb4"><p>在“我网故我在”的召唤下，我使用 R 语言的 blogdown 包1 和 GitHubPages 在一小时内搭建了本博客。搭建过程分为三个步骤：编辑网站文件、创建 GitHub Pages 仓库、域名绑定。
+编辑网站文件 首先需要编写网站文件，也就是一堆 HTML、JS、CSS 文件。 益辉的 blogdown 让静态网站文件编写简单到了一条 R 语句。在编辑网站文件之前，最好用 RStudio 新建一个空的项目文件夹，便于文件管理。在 R 中敲入如下代码</p>
+
+
+
+
+<h1 id="安装blogdown包-devtoolsinstall_github39rstudioblogdown39-setwdpath--path为新建的项目文件夹路径--或者直接用rstudio打开rproj文件--创建网站文件-blogdownnew_site--默认主题-theme--34yihuihugo-lithium34--gt-sessioninfo--r语言系统环境--r-version-332-2016-10-31--platform-x86_64-apple-darwin1340-64-bit--running-under-macos-sierra-10123-创建github-pages仓库-登录自己的-github-主页例如我的主页-httpsgithubcomshichenxie其中shichenxie为我的-github-账号新建名为shichenxiegithubio的项目仓库-repository">安装blogdown包 devtools::install_github('rstudio/blogdown') setwd(path) # path为新建的项目文件夹路径 # 或者直接用rstudio打开*.Rproj文件 # 创建网站文件 blogdown::new_site() # 默认主题 theme = &quot;yihui/hugo-lithium&quot; # &gt; sessionInfo() # R语言系统环境 # R version 3.3.2 (2016-10-31) # Platform: x86_64-apple-darwin13.4.0 (64-bit) # Running under: macOS Sierra 10.12.3 创建GitHub Pages仓库 登录自己的 github 主页（例如我的主页 
+<a href="https://github.com/shichenxie" target="_blank" rel="noopener">https://github.com/shichenxie</a>，其中shichenxie为我的 github 账号），新建名为shichenxie.github.io的项目仓库 (repository)。
+  <a href="#%e5%ae%89%e8%a3%85blogdown%e5%8c%85-devtoolsinstall_github39rstudioblogdown39-setwdpath--path%e4%b8%ba%e6%96%b0%e5%bb%ba%e7%9a%84%e9%a1%b9%e7%9b%ae%e6%96%87%e4%bb%b6%e5%a4%b9%e8%b7%af%e5%be%84--%e6%88%96%e8%80%85%e7%9b%b4%e6%8e%a5%e7%94%a8rstudio%e6%89%93%e5%bc%80rproj%e6%96%87%e4%bb%b6--%e5%88%9b%e5%bb%ba%e7%bd%91%e7%ab%99%e6%96%87%e4%bb%b6-blogdownnew_site--%e9%bb%98%e8%ae%a4%e4%b8%bb%e9%a2%98-theme--34yihuihugo-lithium34--gt-sessioninfo--r%e8%af%ad%e8%a8%80%e7%b3%bb%e7%bb%9f%e7%8e%af%e5%a2%83--r-version-332-2016-10-31--platform-x86_64-apple-darwin1340-64-bit--running-under-macos-sierra-10123-%e5%88%9b%e5%bb%bagithub-pages%e4%bb%93%e5%ba%93-%e7%99%bb%e5%bd%95%e8%87%aa%e5%b7%b1%e7%9a%84-github-%e4%b8%bb%e9%a1%b5%e4%be%8b%e5%a6%82%e6%88%91%e7%9a%84%e4%b8%bb%e9%a1%b5-httpsgithubcomshichenxie%e5%85%b6%e4%b8%adshichenxie%e4%b8%ba%e6%88%91%e7%9a%84-github-%e8%b4%a6%e5%8f%b7%e6%96%b0%e5%bb%ba%e5%90%8d%e4%b8%bashichenxiegithubio%e7%9a%84%e9%a1%b9%e7%9b%ae%e4%bb%93%e5%ba%93-repository"></a>
+</h1>
+<p>然后将 blogdown 创建的 public 文件夹上传到 github pages 文件夹中。在 terminal 中敲入如下代码2</p>
+</p>
+    <footer>
+      
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+  
+  </section>
+</main>
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2023 xxx, BeiJing
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="https://github.com/ShichenXie" title="github" target="_blank" rel="me noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 w1 ml0 mr2 f6 o-90 glow" href="/blog/index.xml" title="rss" >
+      <i class="fas fa-rss fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="mailto:shichen_xie@qq.com" title="Contact form">Contact</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>markdown on 谢 XIE</title>
+    <link>/tags/markdown/</link>
+    <description>Recent content in markdown on 谢 XIE</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 05 Apr 2017 00:00:00 +0000</lastBuildDate><atom:link href="/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Markdown相关资料</title>
+      <link>/posts/2017-04-05-markdown/</link>
+      <pubDate>Wed, 05 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2017-04-05-markdown/</guid>
+      <description> John Gruber&amp;rsquo;s Markdown syntax ( 中文翻译) John MacFarlane&amp;rsquo;s Pandoc Markdown ( 中文翻译) Blackfriday Markdown ( github) RMarkdown ( github) MathJax ( 中文版) </description>
+    </item>
+    
+  </channel>
+</rss>

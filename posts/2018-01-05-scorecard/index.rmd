@@ -1,0 +1,106 @@
+---
+title: 使用 R 语言开发评分卡模型
+author: 谢士晨
+date: '2018-01-05'
+slug: [scorecard]
+categories: [CreditRisk]
+tags: [R]
+---
+
+为了提高评分卡模型的开发效率，我为 R 语言社区贡献了一个开源项目 scorecard 包 ([HomePage](http://shichen.name/scorecard/), [Github](http://github.com/shichenXie/scorecard), [CRAN](https://cran.r-project.org/web/packages/scorecard/index.html))。该 R 包提供了评分卡开发过程中的常用功能，包括变量粗筛、分箱与 woe 转换、模型评估、评分刻度转换等。
+
+评分卡模型的开发流程通常包括以下五个主要步骤：数据准备、WOE 分箱、模型拟合、模型评估、评分卡刻度。下面结合 scorecard 包完成一个简单的评分卡模型开发案例。更加详细的评分卡模型开发介绍请参考[幻灯片](http://shichen.name/slide/20171115scorecard/)。
+
+## 数据准备
+
+首先加载 scorecard 包，并载入包内自带的德国信贷数据集。该数据集包含了1000个借款人的信贷数据，20个 X 特征与1个 Y 值。其详细信息参见 [UCI 的德国信贷数据集网站](https://archive.ics.uci.edu/ml/datasets/Statlog+(German+Credit+Data))。
+```{r}
+library(scorecard)
+
+# load germancredit data
+data(germancredit)
+```
+
+载入数据集后，可先通过变量的 IV 值、缺失率以及单类别率对 X 特征进行初步筛选。var_filter 函数默认删除信息值小于0.02、缺失率大于95%或单类别比例大于95%的变量。var_filter 函数还能够人为设定需要删除或保留的变量，以及够返回变量删除的原因列表。
+```{r, message=FALSE}
+# filter variable via missing rate, iv, identical rate
+dt = var_filter(germancredit, y = 'creditability')
+```
+
+将经过初筛的数据集拆分为训练集与测试集。在 split_df 函数中如果指定了 y 变量，那么将基于 y 变量分层拆分，如果没有指定，则随机拆分数据集。ratio 为拆分后两个数据集的样本量占比。 seed 为随机种子，用于重现拆分的样本。
+```{r}
+# breaking dt into train and test
+dt_list = split_df(dt, y="creditability", ratio = 0.6, seed = 30)
+label_list = lapply(dt_list, function(x) x$creditability)
+```
+
+## WOE分箱
+
+接下来对数据集进行分箱与 woe 值转换。由于这个数据集样本量比较小，我们可以直接对全样本进行分箱处理。如果数据量允许，应该使用训练集进行分箱，并使用训练集得到的 woe 值对其他数据集进行woe替换。
+
+woebin 函数提供了树形 tree、卡方合并 chimerge、等宽 width 与等高 freq  四种分箱方法。以树形分箱为例，默认情形是当信息值增益率 stop_limit 小于0.1, 或分箱数 bin_num_limit 大于8(缺失值除外)时停止分箱，同时确保每一个分箱的样本占比 count_distr_limit 不小于5%。当然还能够通过 breaks_list 手动设定分箱节点。
+
+woebin 函数输出的结果为多个 data.frame 组成的 list，可通过 data.table::rbindlist 或 dplyr::bind_rows 函数合并为一个数据框然后保存。当然 woebin 函数也能够直接输出一个由分箱切割点组成的 list 并保存，下次使用时直接通过 woebin 函数对 breaks_list 参数对新的数据集进行分箱。
+
+woebin_adj 函数可逐个观察每个变量的分箱情况。如果不满意默认的分箱结果，可以手动修改。最终返回一个经过手动调整的分箱节点。
+
+分箱之后，需要使用 woebin_ply 函数将训练集与测试集转换为对应的 woe 值。
+```{r}
+# woe binning 
+bins = woebin(dt, "creditability", print_step=0)
+
+bins[[12]]
+woebin_plot(bins[[12]])
+
+# converting train and test into woe values
+dt_woe_list = lapply(dt_list, function(x) woebin_ply(x, bins))
+```
+
+## 模型拟合
+
+当获得了 woe 值替换之后的数据集，可以使用逻辑回归进行拟合，并通过AIC、LASSO等方法对变量进一步筛选。下面使用基于 AIC 的逐步回归进一步筛选变量，最终得到了一个拥有13个变量的模型。
+
+```{r}
+# lr
+m1 = glm( creditability ~ ., family = binomial(), data = dt_woe_list$train)
+# vif(m1, merge_coef = TRUE) # summary(m1)
+
+# Select a formula-based model by AIC (or by LASSO for large dataset)
+m_step = step(m1, direction="both", trace = FALSE)
+m2 = eval(m_step$call)
+vif(m2, merge_coef = TRUE) # summary(m2)
+```
+
+## 模型评估
+
+通过逻辑回归获得各变量的拟合系数之后，可以计算出各个样本为坏客户的概率，然后评估模型的预测效果。 perf_eva 函数能够计算的评估指标包括 mse, rmse, logloss, r2, ks, auc, gini，以及绘制多种可视化图形 ks, lift, gain, roc, lz, pr, f1, density。
+
+```{r}
+## predicted proability
+pred_list = lapply(dt_woe_list, function(x) predict(m2, x, type='response'))
+
+## performance
+perf = perf_eva(pred = pred_list, label = label_list)
+
+```
+
+
+## 评分卡刻度
+
+当我们获得了各个变量的分箱结果，并且确定了最终进入模型的变量以及系数，则可以创建标准评分卡。
+
+有了评分卡之后，可用于对新样本进行打分，从而评估该客户的信用水平，并最终作出审批决策。
+
+最后，评分卡模型的开发过程，还需要对模型的稳定性进行评估，即计算psi。
+
+```{r}
+## scorecard
+card = scorecard(bins, m2)
+## credit score
+score_list = lapply(dt_list, function(x) scorecard_ply(x, card))
+
+## psi
+perf_psi(score = score_list, label = label_list)
+```
+
+以上代码均可以在该项目的[主页](http://shichen.name/scorecard/)获取。
